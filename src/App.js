@@ -42,16 +42,13 @@ export default function App() {
             ({ item: repository }) => (
               <View style={styles.repositoryContainer}>
                 <Text style={styles.repository}>{repository.title}</Text>
-
                 <View style={styles.techsContainer}>
-                  <Text style={styles.tech}>
-                    ReactJS
+                {repository.techs.map((tech) => (
+                  <Text style={styles.tech} key={tech}>
+                    {String(tech)}
                   </Text>
-                  <Text style={styles.tech}>
-                    Node.js
-                  </Text>
+                ))}
                 </View>
-
                 <View style={styles.likesContainer}>
                   <Text
                     style={styles.likeText}
